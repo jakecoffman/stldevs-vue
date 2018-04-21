@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <header class="header">
-      <h2>Top Languages</h2>
+      <h2>Top Developers</h2>
     </header>
     <div class="loading" v-if="!response">
       <icon name="spinner" pulse scale="2"></icon>
@@ -12,16 +12,18 @@
       <table>
         <thead>
         <tr>
-          <th>Language</th>
-          <th>Repos</th>
-          <th>Users</th>
+          <th>Developer</th>
+          <th>Stars</th>
+          <th>Forks</th>
+          <th>Followers</th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="l in response.langs" :key="l.Language">
-          <td>{{l.Language}}</td>
-          <td>{{l.Count}}</td>
-          <td>{{l.Users}}</td>
+        <tr v-for="l in response.devs" :key="l.Login">
+          <td>{{l.Name || l.Login}}</td>
+          <td>{{l.Stars}}</td>
+          <td>{{l.Forks}}</td>
+          <td>{{l.Followers}}</td>
         </tr>
         </tbody>
       </table>
@@ -33,14 +35,14 @@
 import stldevs from '@/lib/stldevs'
 
 export default {
-  name: 'LanguagesPage',
+  name: 'DevelopersPage',
   data () {
     return {
       response: null
     }
   },
   created () {
-    stldevs.listLanguages().then(r => (this.response = r.data))
+    stldevs.listDevelopers().then(r => (this.response = r.data))
   }
 }
 </script>
