@@ -1,85 +1,36 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <h1>St Louis Developers</h1>
+    <h2>Programmers & Designers</h2>
+
+    <h3>Hello world!</h3>
+    <p>
+      This is a site for discovering what open source work developers are doing in the Greater St. Louis region by
+      harvesting public information from Github.
+    </p>
+    <p>
+      If a user on Github has self-identified as being from St. Louis, they are included here. You may also log in to
+      this site and request to be included if you are from St. Louis or identify as a St. Louisan.
+    </p>
+
+    <h3>Did you know?</h3>
+    <p>
+      There are over 1,000 developers from St. Louis on Github that have pushed to over 4,000 code repositories.
+    </p>
+    <p>
+      The creator of the sublime-text git plugin is from St. Louis. Another St. Louisan created a JavaScript CMS and yet
+      another made a Dropbox-like sync tool in pure shell script!
+    </p>
+    <p>
+      We have many talented and driven developers here and this site's goal is to show off our projects to the city and
+      the rest of the world.
+    </p>
+
+    <h3>Contribute</h3>
+
+    <p>Contributions are welcome to <a href="http://github.com/jakecoffman/stldevs">the backend(Go)</a> or <a
+      href="https://github.com/jakecoffman/stldevs-vue">the frontend (Vuejs)</a>! Filing issues is the easiest way to
+      contribute.</p>
   </div>
 </template>
 
@@ -87,27 +38,11 @@
 export default {
   name: 'HelloWorld',
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+    return {}
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
