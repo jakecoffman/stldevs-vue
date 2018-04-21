@@ -1,7 +1,8 @@
 <template>
   <div class="page">
-    <h1>St Louis Developers</h1>
-    <h2>Programmers & Designers</h2>
+    <header class="header">
+      <h1>St Louis Developers</h1>
+    </header>
 
     <h3>Hello world!</h3>
     <p>

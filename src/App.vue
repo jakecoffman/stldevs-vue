@@ -5,9 +5,15 @@
         <icon name="home"></icon>
         Home
       </router-link>
-      <router-link :to="{name: 'Languages'}">Languages</router-link>
-      <router-link to="developers">Developers</router-link>
-      <router-link to="organizations">Organizations</router-link>
+      <router-link :to="{name: 'Languages'}">
+        <icon name="code"></icon>
+        Languages</router-link>
+      <router-link to="developers">
+        <icon name="smile"></icon>
+        Developers</router-link>
+      <router-link to="organizations">
+        <icon name="users"></icon>
+        Organizations</router-link>
     </nav>
     <router-view/>
   </div>
@@ -23,6 +29,11 @@ export default {
   $break-small: 600px;
   $break-large: 1200px;
 
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -32,6 +43,7 @@ export default {
     @media screen and (max-width: $break-small) {
       flex-direction: column;
     }
+    font-size: 1.1em;
   }
 
   .sidebar {
@@ -70,6 +82,21 @@ export default {
   .loading {
     display: flex;
     justify-content: center;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+
+    color: white;
+    background-color: purple;
+  }
+
+  table {
+    width: 100%;
+    th {
+      text-align: left;
+    }
   }
 
 </style>
