@@ -1,19 +1,23 @@
 <template>
   <div id="app">
     <nav class="sidebar">
+      <h1>StL Devs</h1>
       <router-link :to="{name: 'Home'}">
         <icon name="home"></icon>
-        Home
+        <span>Home</span>
       </router-link>
       <router-link :to="{name: 'Languages'}">
         <icon name="code"></icon>
-        Languages</router-link>
+        <span>Languages</span>
+      </router-link>
       <router-link to="developers">
         <icon name="smile"></icon>
-        Developers</router-link>
+        <span>Developers</span>
+      </router-link>
       <router-link to="organizations">
         <icon name="users"></icon>
-        Organizations</router-link>
+        <span>Organizations</span>
+      </router-link>
     </nav>
     <router-view/>
   </div>
@@ -28,6 +32,10 @@ export default {
 <style lang="scss">
   $break-small: 600px;
   $break-large: 1200px;
+
+  h2 {
+    font-size: 2em;
+  }
 
   body {
     margin: 0;
@@ -51,24 +59,34 @@ export default {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      a {
-        padding: 10px;
-        color: black;
+      h1, span {
+        display: none;
       }
     }
     @media screen and (min-width: $break-small+1) {
       display: flex;
       flex-direction: column;
-      min-width: 10em;
-      a {
-        padding: 10px;
-        color: black;
+      min-width: 12em;
+      border-right: 1px solid rgba(0, 0, 0, 0.14);
+      h1 {
+        padding-left: 1em;
       }
+    }
+  }
+
+  .sidebar {
+    span {
+      padding: 1em;
+    }
+    a {
+      padding: 1em;
+      color: black;
     }
   }
 
   .router-link-active {
     font-weight: bold;
+    background: #dedede;
   }
 
   a {
@@ -77,19 +95,21 @@ export default {
 
   .page {
     width: 100%;
+    header {
+      display: flex;
+      justify-content: center;
+
+      color: white;
+      background-color: purple;
+    }
+    article {
+      padding: 1em;
+    }
   }
 
   .loading {
     display: flex;
     justify-content: center;
-  }
-
-  header {
-    display: flex;
-    justify-content: center;
-
-    color: white;
-    background-color: purple;
   }
 
   table {

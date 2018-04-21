@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <header class="header">
-      <h1>Top Languages</h1>
+      <h2>Top Languages</h2>
     </header>
     <div class="loading" v-if="!response">
       <icon name="spinner" pulse scale="2"></icon>
