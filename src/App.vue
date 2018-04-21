@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <nav class="sidebar">
-      <router-link to="/">
+      <router-link :to="{name: 'Home'}">
         <icon name="home"></icon>
         Home
       </router-link>
-      <router-link to="languages">Languages</router-link>
+      <router-link :to="{name: 'Languages'}">Languages</router-link>
       <router-link to="developers">Developers</router-link>
       <router-link to="organizations">Organizations</router-link>
     </nav>
@@ -63,8 +63,13 @@ export default {
     text-decoration: none;
   }
 
-  .wrapper {
-    min-height: 100%;
+  .page {
+    width: 100%;
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
   }
 
 </style>

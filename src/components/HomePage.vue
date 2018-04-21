@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="page">
     <h1>St Louis Developers</h1>
     <h2>Programmers & Designers</h2>
 

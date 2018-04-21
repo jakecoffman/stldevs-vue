@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 
 import 'vue-awesome/icons/home'
+import 'vue-awesome/icons/spinner'
 import Icon from 'vue-awesome/components/Icon'
 
 Vue.config.productionTip = false
