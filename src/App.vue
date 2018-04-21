@@ -86,7 +86,7 @@ export default {
 
   .router-link-active {
     font-weight: bold;
-    background: #dedede;
+    background: #ececec;
   }
 
   a {
@@ -94,6 +94,7 @@ export default {
   }
 
   .page {
+    background: #ececec;
     width: 100%;
     header {
       display: flex;
@@ -103,19 +104,34 @@ export default {
       background-color: purple;
     }
     article {
+      background: white;
       padding: 1em;
+      margin: 1em;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
     }
   }
 
   .loading {
     display: flex;
     justify-content: center;
+    margin-top: 2em;
   }
 
   table {
     width: 100%;
+    border-collapse: collapse;
     th {
       text-align: left;
+    }
+    tr {
+      border: solid;
+      border-width: 1px 0;
+    }
+    tr:first-child {
+      border-top: none;
+    }
+    tr:last-child {
+      border-bottom: none;
     }
   }
 
