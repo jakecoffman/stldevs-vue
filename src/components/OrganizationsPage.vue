@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <header class="header">
-      <h2>Top Developers</h2>
+      <h2>Top Organizations</h2>
     </header>
     <div class="loading" v-if="!response">
       <icon name="spinner" pulse scale="2"></icon>
@@ -15,7 +15,6 @@
           <th>Developer</th>
           <th>Stars</th>
           <th>Forks</th>
-          <th>Followers</th>
           <th>Repos</th>
         </tr>
         </thead>
@@ -24,7 +23,6 @@
           <td>{{l.Name || l.Login}}</td>
           <td>{{l.Stars}}</td>
           <td>{{l.Forks}}</td>
-          <td>{{l.Followers}}</td>
           <td>{{l.PublicRepos}}</td>
         </tr>
         </tbody>
@@ -37,14 +35,14 @@
 import stldevs from '@/lib/stldevs'
 
 export default {
-  name: 'DevelopersPage',
+  name: 'LanguagesPage',
   data () {
     return {
       response: null
     }
   },
   created () {
-    stldevs.listDevelopers().then(r => (this.response = r.data))
+    stldevs.listOrganizations().then(r => (this.response = r.data))
   }
 }
 </script>

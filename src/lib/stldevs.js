@@ -20,7 +20,17 @@ function listDevelopers () {
   return p
 }
 
+function listOrganizations () {
+  if (cache.organizations) {
+    return Promise.resolve(cache.organizations)
+  }
+  const p = axios.get('/stldevs-api/toporgs')
+  p.then(r => (cache.organizations = r))
+  return p
+}
+
 export default {
   listLanguages,
-  listDevelopers
+  listDevelopers,
+  listOrganizations
 }

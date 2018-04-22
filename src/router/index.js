@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HomePage from '@/components/HomePage'
 import LanguagesPage from '@/components/LanguagesPage'
 import DevelopersPage from '@/components/DevelopersPage'
+import OrgPage from '@/components/OrganizationsPage'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/developers',
       name: 'Developers',
       component: DevelopersPage
+    },
+    {
+      path: '/organizations',
+      name: 'Organizations',
+      component: OrgPage
     }
   ]
 })
