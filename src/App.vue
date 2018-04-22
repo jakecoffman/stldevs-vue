@@ -19,7 +19,9 @@
         <span>Organizations</span>
       </router-link>
     </nav>
-    <router-view/>
+    <div class="wrap">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -37,12 +39,14 @@ export default {
     font-size: 2em;
   }
 
-  body {
+  html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
   }
 
   #app {
+    min-height: 100%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -66,15 +70,28 @@ export default {
     @media screen and (min-width: $break-small+1) {
       display: flex;
       flex-direction: column;
-      min-width: 12em;
+      width: 12em;
       border-right: 1px solid rgba(0, 0, 0, 0.14);
       h1 {
         padding-left: 1em;
       }
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: $break-small+1) {
+    .wrap {
+      margin-left: 12em;
+      width: 100%;
+      min-height: 100%;
     }
   }
 
   .sidebar {
+    background-color: white;
     span {
       padding: 1em;
     }
@@ -96,6 +113,7 @@ export default {
   .page {
     background: #ececec;
     width: 100%;
+    height: 100%;
     header {
       display: flex;
       justify-content: center;
@@ -126,6 +144,7 @@ export default {
     tr {
       border: solid;
       border-width: 1px 0;
+      border-color: rgba(0, 0, 0, 0.14);
     }
     tr:first-child {
       border-top: none;
