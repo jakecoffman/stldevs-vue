@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <header class="header">
-      <h2></h2>
+      <h2>{{$route.params.login}}</h2>
     </header>
     <div class="loading" v-if="!response">
       <icon name="spinner" pulse scale="2"></icon>
@@ -21,9 +21,17 @@
       <section class="code">
         <div v-for="(infos, lang) in response.profile.Repos" :key="lang">
           <h3>{{lang}}</h3>
-          <div v-for="info in infos" :key="info.Name">
-            {{info.Name}}
-          </div>
+          <section v-for="repo in infos" :key="repo.Name">
+            <div class="flex">
+              <h4 class="flex-1">
+                <a :href="`https://github.com/${$route.params.login}/${repo.Name}`" target="_blank">{{repo.Name}}</a>
+              </h4>
+              <span>
+              {{repo.StargazersCount}} <icon name="star"></icon> {{repo.ForksCount}} <icon name="fork"></icon>
+            </span>
+            </div>
+            <em>{{repo.Description}}</em>
+          </section>
         </div>
       </section>
     </article>
@@ -48,4 +56,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  h4 {
+    margin: 0;
+  }
 </style>

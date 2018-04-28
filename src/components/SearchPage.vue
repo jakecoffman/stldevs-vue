@@ -22,7 +22,7 @@
       <span v-if="usersStatus === 2 && reposStatus === 2" class="center">
         <p>{{users.results.length}} users and {{repos.results.length}} repos</p>
       </span>
-      <article>
+      <article v-if="users.results.length">
         <h3>Users</h3>
         <section class="profile" v-for="user in users.results" :key="user.Login">
           <router-link :to="`/developers/${user.Login}`">
@@ -38,7 +38,7 @@
           </ul>
         </section>
       </article>
-      <article class="repos">
+      <article class="repos" v-if="repos.results.length">
         <h3>Repositories</h3>
         <section v-for="repo in repos.results" :key="repo.Owner + repo.Name">
           <div class="flex">
