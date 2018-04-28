@@ -24,7 +24,7 @@
           <td><router-link :to="`/developers/${l.Login}`">{{l.Name || l.Login}}</router-link></td>
           <td>{{l.Stars}}</td>
           <td>{{l.Forks}}</td>
-          <td>{{l.Followers}}</td>
+          <td class="hide-phone">{{l.Followers}}</td>
           <td class="hide-phone">{{l.PublicRepos}}</td>
         </tr>
         </tbody>
