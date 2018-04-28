@@ -7,7 +7,7 @@
       <icon name="spinner" pulse scale="2"></icon>
     </div>
     <article v-else>
-      <em>Last run at {{response.lastrun}}</em>
+      <em class="lastrun">Last run at {{response.lastrun | date}}</em>
 
       <table>
         <thead>

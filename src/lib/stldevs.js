@@ -50,10 +50,15 @@ function getLang (lang) {
   return p
 }
 
+function search (type, query) {
+  return axios.get(`/stldevs-api/search?type=${type}&q=${query}`)
+}
+
 export default {
   listLanguages,
   listDevelopers,
   listOrganizations,
   getProfile,
-  getLang
+  getLang,
+  search
 }

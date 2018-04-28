@@ -32,7 +32,7 @@
 
       <h3>Contribute</h3>
 
-      <p>Contributions are welcome to <a href="http://github.com/jakecoffman/stldevs">the backend(Go)</a> or <a
+      <p>Contributions are welcome to <a href="http://github.com/jakecoffman/stldevs">the backend (Go)</a> or <a
         href="https://github.com/jakecoffman/stldevs-vue">the frontend (Vuejs)</a>! Filing issues is the easiest way to
         contribute.</p>
     </article>

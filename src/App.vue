@@ -18,6 +18,10 @@
         <icon name="users"></icon>
         <span>Organizations</span>
       </router-link>
+      <router-link to="/search">
+        <icon name="search"></icon>
+        <span>Search</span>
+      </router-link>
     </nav>
     <div class="wrap">
       <router-view/>
@@ -152,6 +156,37 @@ export default {
     tr:last-child {
       border-bottom: none;
     }
+  }
+
+  .lastrun {
+    float: right;
+  }
+
+  input {
+    border: 1px solid;
+    border-radius: 4px;
+  }
+  button {
+    border: 1px solid;
+    border-radius: 4px;
+  }
+
+  .profile {
+    display: flex;
+    .avatar {
+      height: 200px;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .flex {
+    display: flex;
+  }
+  .flex-1 {
+    flex: 1;
   }
 
 </style>

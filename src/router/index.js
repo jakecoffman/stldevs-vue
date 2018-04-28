@@ -6,6 +6,7 @@ import LangPage from '@/components/LangPage'
 import DevelopersPage from '@/components/DevelopersPage'
 import ProfilePage from '@/components/ProfilePage'
 import OrgPage from '@/components/OrganizationsPage'
+import SearchPage from '@/components/SearchPage'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/organizations',
       name: 'Organizations',
       component: OrgPage
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: SearchPage
     }
   ]
 })

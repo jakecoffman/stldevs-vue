@@ -13,8 +13,6 @@
           <li>{{response.profile.User.name || response.profile.User.login}}</li>
           <li>{{response.profile.User.blog}}</li>
           <li>{{response.profile.User.email}}</li>
-        </ul>
-        <ul>
           <li>{{response.profile.User.followers}} followers</li>
           <li>{{response.profile.User.public_repos}} repos</li>
           <li>{{response.profile.User.public_gists}} gists</li>
@@ -50,10 +48,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .profile {
-    display: flex;
-    .avatar {
-      height: 200px;
-    }
-  }
 </style>

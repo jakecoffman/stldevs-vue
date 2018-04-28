@@ -7,7 +7,7 @@
       <icon name="spinner" pulse scale="2"></icon>
     </div>
     <article v-else>
-      <p>{{response.count}} {{$route.params.lang}} users in St. Louis</p>
+      <h3>{{response.count}} {{$route.params.lang}} users in St. Louis</h3>
       <div v-for="lang in response.languages" :key="lang.Owner">
         <router-link :to="`/developers/${lang.Owner}`">{{lang.Owner}}</router-link>
         has <b>{{lang.Repos.length}}</b> {{$route.params.lang}} repos, with popular ones like:
