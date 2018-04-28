@@ -15,7 +15,7 @@
           <th>Developer</th>
           <th>Stars</th>
           <th>Forks</th>
-          <th>Followers</th>
+          <th class="hide-phone">Followers</th>
           <th class="hide-phone">Repos</th>
         </tr>
         </thead>
