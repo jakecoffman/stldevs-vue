@@ -21,7 +21,7 @@
         </thead>
         <tbody>
         <tr v-for="l in response.devs" :key="l.Login">
-          <td>{{l.Name || l.Login}}</td>
+          <td><router-link :to="`/developers/${l.Login}`">{{l.Name || l.Login}}</router-link></td>
           <td>{{l.Stars}}</td>
           <td>{{l.Forks}}</td>
           <td>{{l.Followers}}</td>

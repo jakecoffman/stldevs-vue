@@ -2,13 +2,19 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '@/components/HomePage'
 import LanguagesPage from '@/components/LanguagesPage'
+import LangPage from '@/components/LangPage'
 import DevelopersPage from '@/components/DevelopersPage'
+import ProfilePage from '@/components/ProfilePage'
 import OrgPage from '@/components/OrganizationsPage'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      redirect: 'home'
+    },
     {
       path: '/home',
       name: 'Home',
@@ -20,9 +26,19 @@ export default new Router({
       component: LanguagesPage
     },
     {
+      path: '/languages/:lang',
+      name: 'Language',
+      component: LangPage
+    },
+    {
       path: '/developers',
       name: 'Developers',
       component: DevelopersPage
+    },
+    {
+      path: '/developers/:login',
+      name: 'Profile',
+      component: ProfilePage
     },
     {
       path: '/organizations',

@@ -2,19 +2,19 @@
   <div id="app">
     <nav class="sidebar">
       <h1>StL Devs</h1>
-      <router-link :to="{name: 'Home'}">
+      <router-link to="/home">
         <icon name="home"></icon>
         <span>Home</span>
       </router-link>
-      <router-link :to="{name: 'Languages'}">
+      <router-link to="/languages">
         <icon name="code"></icon>
         <span>Languages</span>
       </router-link>
-      <router-link to="developers">
+      <router-link to="/developers">
         <icon name="smile"></icon>
         <span>Developers</span>
       </router-link>
-      <router-link to="organizations">
+      <router-link to="/organizations">
         <icon name="users"></icon>
         <span>Organizations</span>
       </router-link>

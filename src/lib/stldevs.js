@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const cache = {}
+const cache = {
+  profiles: {},
+  langs: {}
+}
 
 function listLanguages () {
   if (cache.languages) {
@@ -29,8 +32,28 @@ function listOrganizations () {
   return p
 }
 
+function getProfile (login) {
+  if (cache.profiles[login]) {
+    return Promise.resolve(cache.profiles[login])
+  }
+  const p = axios.get(`/stldevs-api/profile/${login}`)
+  p.then(r => (cache.profiles[login] = r))
+  return p
+}
+
+function getLang (lang) {
+  if (cache.langs[lang]) {
+    return Promise.resolve(cache.profiles[lang])
+  }
+  const p = axios.get(`/stldevs-api/lang/${lang}`)
+  p.then(r => (cache.profiles[lang] = r))
+  return p
+}
+
 export default {
   listLanguages,
   listDevelopers,
-  listOrganizations
+  listOrganizations,
+  getProfile,
+  getLang
 }
