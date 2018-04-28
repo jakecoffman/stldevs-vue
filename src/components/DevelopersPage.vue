@@ -16,7 +16,7 @@
           <th>Stars</th>
           <th>Forks</th>
           <th>Followers</th>
-          <th>Repos</th>
+          <th class="hide-phone">Repos</th>
         </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
           <td>{{l.Stars}}</td>
           <td>{{l.Forks}}</td>
           <td>{{l.Followers}}</td>
-          <td>{{l.PublicRepos}}</td>
+          <td class="hide-phone">{{l.PublicRepos}}</td>
         </tr>
         </tbody>
       </table>

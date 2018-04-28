@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
-  $break-small: 600px;
+  $break-small: 690px;
   $break-large: 1200px;
 
   h2 {
@@ -173,8 +173,21 @@ export default {
 
   .profile {
     display: flex;
+    justify-content: center;
     .avatar {
       height: 200px;
+    }
+    @media screen and (max-width: $break-small) {
+      flex-direction: column;
+      .avatar {
+        width: 200px;
+      }
+    }
+  }
+
+  .hide-phone {
+    @media screen and (max-width: $break-small) {
+      display: none;
     }
   }
 
