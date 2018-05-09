@@ -43,6 +43,10 @@ export default {
     font-size: 2em;
   }
 
+  body {
+    background: #ececec;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
