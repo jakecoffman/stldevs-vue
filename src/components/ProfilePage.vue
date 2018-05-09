@@ -21,7 +21,7 @@
       <section class="code">
         <div v-for="(infos, lang) in response.profile.Repos" :key="lang">
           <h3>{{lang}}</h3>
-          <section v-for="repo in infos" :key="repo.Name">
+          <section v-for="repo in infos" :key="repo.Name" class="repo">
             <div class="flex">
               <h4 class="flex-1">
                 <a :href="`https://github.com/${$route.params.login}/${repo.Name}`" target="_blank">{{repo.Name}}</a>
@@ -58,5 +58,8 @@ export default {
 <style scoped lang="scss">
   h4 {
     margin: 0;
+  }
+  .repo {
+      padding-bottom: 0.5em;
   }
 </style>
