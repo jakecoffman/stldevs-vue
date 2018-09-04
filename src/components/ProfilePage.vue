@@ -24,7 +24,7 @@
           <section v-for="repo in infos" :key="repo.Name" class="repo">
             <div class="flex">
               <h4 class="flex-1">
-                <a :href="`https://github.com/${$route.params.login}/${repo.Name}`" target="_blank">{{repo.Name}}</a>
+                <icon v-if="repo.Fork === true" name="fork"></icon> <a :href="`https://github.com/${$route.params.login}/${repo.Name}`" target="_blank">{{repo.Name}}</a>
               </h4>
               <span>
               {{repo.StargazersCount}} <icon name="star"></icon> {{repo.ForksCount}} <icon name="fork"></icon>
