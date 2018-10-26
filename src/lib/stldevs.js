@@ -42,6 +42,7 @@ function getProfile (login) {
 }
 
 function getLang (lang) {
+  lang = lang.replace('#', '%23')
   if (cache.langs[lang]) {
     return Promise.resolve(cache.profiles[lang])
   }

@@ -19,7 +19,7 @@
         </thead>
         <tbody>
         <tr v-for="l in response.langs" :key="l.Language">
-          <td><router-link :to="`/languages/${l.Language}`">{{l.Language}}</router-link></td>
+          <td><router-link :to="{name: 'Language', params: {lang: l.Language}}">{{l.Language}}</router-link></td>
           <td>{{l.Count}}</td>
           <td>{{l.Users}}</td>
         </tr>
