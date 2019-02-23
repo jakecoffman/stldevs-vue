@@ -7,7 +7,9 @@
       <section class="profile">
         <img class="avatar" :src="response.profile.User.avatar_url">
         <ul>
-          <li>{{response.profile.User.name || response.profile.User.login}}</li>
+          <li><a :href="`https://github.com/${response.profile.User.login}`" target="_blank">
+            {{response.profile.User.name || response.profile.User.login}} <icon name="external-link-alt" class="sup" scale="0.75"/>
+          </a></li>
           <li>{{response.profile.User.blog}}</li>
           <li>{{response.profile.User.email}}</li>
           <li>{{response.profile.User.followers}} followers</li>

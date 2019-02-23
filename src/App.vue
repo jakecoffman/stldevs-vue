@@ -224,4 +224,8 @@ export default {
     opacity: 0;
     transform: translateX(300px);
   }
+
+  .sup {
+    vertical-align: super;
+  }
 </style>

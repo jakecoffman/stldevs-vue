@@ -13,6 +13,7 @@ import 'vue-awesome/icons/smile'
 import 'vue-awesome/icons/users'
 import 'vue-awesome/icons/search'
 import 'vue-awesome/icons/star'
+import 'vue-awesome/icons/external-link-alt'
 import Icon from 'vue-awesome/components/Icon'
 
 Icon.register({
