@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="sidebar">
-      <h1>StL Devs</h1>
+      <h1 id="thing">STL DEVS</h1>
       <router-link to="/home">
         <icon name="home"></icon>
         <span>Home</span>
@@ -24,7 +24,12 @@
       </router-link>
     </nav>
     <div class="wrap">
-      <router-view/>
+      <header class="header">
+        <h2>{{$route.params.lang || $route.params.login || $route.name}}</h2>
+      </header>
+      <transition name="page" mode="out-in">
+        <router-view/>
+      </transition>
     </div>
   </div>
 </template>
@@ -38,6 +43,10 @@ export default {
 <style lang="scss">
   $break-small: 690px;
   $break-large: 1200px;
+
+  #thing {
+    font-variant-caps: all-small-caps;
+  }
 
   h2 {
     font-size: 2em;
@@ -118,17 +127,18 @@ export default {
     text-decoration: none;
   }
 
+  header {
+    display: flex;
+    justify-content: center;
+
+    color: white;
+    background-color: purple;
+  }
+
   .page {
     background: #ececec;
     width: 100%;
     height: 100%;
-    header {
-      display: flex;
-      justify-content: center;
-
-      color: white;
-      background-color: purple;
-    }
     article {
       background: white;
       padding: 1em;
@@ -206,4 +216,12 @@ export default {
     flex: 1;
   }
 
+  .page-enter-active, .page-leave-active {
+    transition: all 0.3s ease;
+  }
+
+  .page-enter, .page-leave-to {
+    opacity: 0;
+    transform: translateX(300px);
+  }
 </style>

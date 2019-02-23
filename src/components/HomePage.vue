@@ -1,9 +1,5 @@
 <template>
   <div class="page">
-    <header class="header">
-      <h2>St Louis Developers</h2>
-    </header>
-
     <article>
       <h3>Hello world!</h3>
       <p>

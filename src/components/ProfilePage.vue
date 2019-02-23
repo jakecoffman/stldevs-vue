@@ -1,8 +1,5 @@
 <template>
   <div class="page">
-    <header class="header">
-      <h2>{{$route.params.login}}</h2>
-    </header>
     <div class="loading" v-if="!response">
       <icon name="spinner" pulse scale="2"></icon>
     </div>

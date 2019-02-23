@@ -19,7 +19,8 @@ export default new Router({
     },
     {
       path: '/home',
-      name: 'Home',
+      name: 'St. Louis Developers',
+      icon: 'home',
       component: HomePage
     },
     {

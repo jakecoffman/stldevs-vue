@@ -1,9 +1,5 @@
 <template>
   <div class="page">
-    <header class="header">
-      <h2>Search</h2>
-    </header>
-
     <div class="search">
       <input type="text" v-model="query" @keyup.enter="search(query)" placeholder="Search"/>
       <button @click="search(query)">
@@ -18,24 +14,25 @@
     <div class="loading" v-if="status === 1">
       <icon name="spinner" pulse scale="2"></icon>
     </div>
+    <transition name="page">
     <div v-if="status === 2">
-      <span v-if="usersStatus === 2 && reposStatus === 2" class="center">
-        <p>{{users.results.length}} users and {{repos.results.length}} repos</p>
-      </span>
+      <p class="center">{{users.results.length}} users and {{repos.results.length}} repos</p>
       <article v-if="users.results.length">
         <h3>Users</h3>
-        <section class="profile" v-for="user in users.results" :key="user.Login">
-          <router-link :to="`/developers/${user.Login}`">
-            <img class="avatar" :src="user.AvatarURL">
-          </router-link>
-          <ul>
-            <li>{{user.Name || user.Login}}</li>
-            <li>{{user.Blog}}</li>
-            <li>{{user.Email}}</li>
-            <li>{{user.Followers}} followers</li>
-            <li>{{user.PublicRepos}} repos</li>
-            <li>{{user.PublicGists}} gists</li>
-          </ul>
+        <section>
+          <div v-for="user in users.results" :key="user.Login" class="profile">
+            <router-link :to="`/developers/${user.Login}`">
+              <img class="avatar" :src="user.AvatarURL">
+            </router-link>
+            <ul class="deets">
+              <li><router-link :to="`/developers/${user.Login}`">{{user.Name || user.Login}}</router-link></li>
+              <li>{{user.Blog}}</li>
+              <li>{{user.Email}}</li>
+              <li>{{user.Followers}} followers</li>
+              <li>{{user.PublicRepos}} repos</li>
+              <li>{{user.PublicGists}} gists</li>
+            </ul>
+          </div>
         </section>
       </article>
       <article class="repos" v-if="repos.results.length">
@@ -57,6 +54,7 @@
         </section>
       </article>
     </div>
+    </transition>
   </div>
 </template>
 
@@ -70,13 +68,16 @@ export default {
       status: 0, // 0 - initial, 1 - loading, 2 - results
       usersStatus: 0,
       reposStatus: 0,
-      users: [],
-      repos: [],
+      users: {results: []},
+      repos: {results: []},
       query: ''
     }
   },
   methods: {
     search (query) {
+      if (!query) {
+        return
+      }
       this.status = 1
       this.usersStatus = 1
       this.reposStatus = 1
@@ -90,6 +91,16 @@ export default {
         this.reposStatus = 2
         this.status = 2
       })
+      this.$router.push({query: {query}})
+      if (window && window.localStorage) {
+        window.localStorage['stldevs-query'] = query
+      }
+    }
+  },
+  created () {
+    if (window && window.localStorage && window.localStorage['stldevs-query']) {
+      this.query = window.localStorage['stldevs-query']
+      this.search(this.query)
     }
   }
 }
@@ -118,6 +129,11 @@ export default {
   }
   .profile {
     padding-top: .5em;
+    display: flex;
+    align-items: center;
+  }
+  .deets {
+    flex-grow: 1;
   }
   h4 {
     margin: 0;
